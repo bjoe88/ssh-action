@@ -15,7 +15,7 @@ if [ ! -f "$SSHPATH/known_hosts" ]
 then
   touch "$SSHPATH/known_hosts"
 fi
-$INPUT_KEY = $INPUT_KEY.replace("$SHA8", "$INPUT_SHA8")
+$INPUT_KEY = $INPUT_KEY.replace("$SHA8", "${INPUT_SHA8}")
 
 
 echo "$INPUT_KEY" > "$SSHPATH/deploy_key"
