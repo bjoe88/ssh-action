@@ -18,7 +18,7 @@ fi
 echo $INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"
 echo 'aaa'
 test= $INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"
-echo test
+echo "$test"
 echo 'zzz'
 
 echo "$INPUT_KEY" > "$SSHPATH/deploy_key"
