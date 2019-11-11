@@ -17,7 +17,7 @@ then
 fi
 
 echo 'aaa'
-$INPUT_COMMAND = $INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"
+INPUT_COMMAND= $INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"
 echo $INPUT_COMMAND
 echo 'zzz'
 
