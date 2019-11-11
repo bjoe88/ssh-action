@@ -16,20 +16,20 @@ then
   touch "$SSHPATH/known_hosts"
 fi
 
-$INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"> $HOME/shell2.sh
+# $INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"> $HOME/shell2.sh
 
-echo < $HOME/shell2.sh
-echo 'ccc'
+# echo < $HOME/shell2.sh
+# echo 'ccc'
 
-echo "${INPUT_COMMAND/\*SHA8/$INPUT_SHA8}"    
-echo 'ddd'
+# echo "${INPUT_COMMAND/\*SHA8/$INPUT_SHA8}"    
+# echo 'ddd'
 
 echo "$INPUT_KEY" > "$SSHPATH/deploy_key"
 chmod 700 "$SSHPATH"
 chmod 600 "$SSHPATH/known_hosts"
 chmod 600 "$SSHPATH/deploy_key"
 
-echo"${INPUT_COMMAND/\*SHA8/$INPUT_SHA8}" > $HOME/shell.sh
+echo "${INPUT_COMMAND/\*SHA8/$INPUT_SHA8}" > $HOME/shell.sh
 cat $HOME/shell.sh
 
 echo Start Run Command
