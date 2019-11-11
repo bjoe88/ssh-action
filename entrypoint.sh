@@ -15,10 +15,10 @@ if [ ! -f "$SSHPATH/known_hosts" ]
 then
   touch "$SSHPATH/known_hosts"
 fi
-
+echo $INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"
 echo 'aaa'
-INPUT_COMMAND= $INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"
-echo $INPUT_COMMAND
+test= $INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"
+echo $test
 echo 'zzz'
 
 echo "$INPUT_KEY" > "$SSHPATH/deploy_key"
