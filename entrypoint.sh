@@ -16,6 +16,8 @@ then
   touch "$SSHPATH/known_hosts"
 fi
 echo $INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"
+echo 'bbb'
+echo "${INPUT_COMMAND/*SHA8/$INPUT_SHA8}" 
 echo 'aaa'
 test= $INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"
 echo "$test"
