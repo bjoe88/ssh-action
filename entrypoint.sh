@@ -16,8 +16,9 @@ then
   touch "$SSHPATH/known_hosts"
 fi
 
+echo 'aaa'
 echo $INPUT_KEY | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"
-
+echo 'zzz'
 
 echo "$INPUT_KEY" > "$SSHPATH/deploy_key"
 chmod 700 "$SSHPATH"
