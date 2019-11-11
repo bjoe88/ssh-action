@@ -16,8 +16,8 @@ then
   touch "$SSHPATH/known_hosts"
 fi
 
-echo $INPUT_SHA8;
-let isha8 = $INPUT_SHA8;
+echo INPUT_SHA8;
+let isha8 = INPUT_SHA8;
 echo isha8;
 $INPUT_KEY = $INPUT_KEY.replace("*SHA8", isha8 )
 
