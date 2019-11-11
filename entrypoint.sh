@@ -15,13 +15,11 @@ if [ ! -f "$SSHPATH/known_hosts" ]
 then
   touch "$SSHPATH/known_hosts"
 fi
-echo $INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"
-echo 'bbb'
-echo "${INPUT_COMMAND/*SHA8/$INPUT_SHA8}" 
-echo 'aaa'
-test= $INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"
-echo "$test"
-echo 'zzz'
+
+$INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"> $HOME/shell2.sh
+
+echo < $HOME/shell2.sh
+echo 'ccc'
 
 echo "$INPUT_KEY" > "$SSHPATH/deploy_key"
 chmod 700 "$SSHPATH"
