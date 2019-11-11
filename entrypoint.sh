@@ -23,7 +23,10 @@ fi
 
 # echo "${INPUT_COMMAND/\*SHA8/$INPUT_SHA8}"    
 # echo 'ddd'
-
+echo $INPUT_SHA8
+echo Test
+echo $INPUT_COMMAND
+echo Testb
 echo "$INPUT_KEY" > "$SSHPATH/deploy_key"
 chmod 700 "$SSHPATH"
 chmod 600 "$SSHPATH/known_hosts"
