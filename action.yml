@@ -23,6 +23,9 @@ inputs:
   pass:
     description: "Password for authentication."
     required: false
+  sha8:
+    description: "Github commit sha8."
+    required: false
 
 runs:
   using: 'docker'
