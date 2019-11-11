@@ -23,6 +23,9 @@ inputs:
   pass:
     description: "Password for authentication."
     required: false
+  github_sha:
+    description: "github commit short sha"
+    required: false
 
 runs:
   using: 'docker'
