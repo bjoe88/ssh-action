@@ -16,10 +16,6 @@ then
   touch "$SSHPATH/known_hosts"
 fi
 
-# value=$(</github/workspace/.docker-compose.deploy)
-# echo "$value"
-# echo "zczxc"
-
 echo "$INPUT_KEY" > "$SSHPATH/deploy_key"
 chmod 700 "$SSHPATH"
 chmod 600 "$SSHPATH/known_hosts"
@@ -30,7 +26,6 @@ echo Start Run Command
 
 if [ "$INPUT_PASS" = "" ]
 then
-  sh -c "scp -i $SSHPATH/deploy_key -o StrictHostKeyChecking=no -p $INPUT_PORT ${INPUT_USER}@${INPUT_HOST}:/home/ubuntu/test123.yml /github/workspace/.docker-compose.deploy"
   sh -c "ssh -i $SSHPATH/deploy_key -o StrictHostKeyChecking=no -p $INPUT_PORT ${INPUT_USER}@${INPUT_HOST} < $HOME/shell.sh"
 else
   sh -c "sshpass -p $INPUT_PASS ssh -o StrictHostKeyChecking=no -p $INPUT_PORT ${INPUT_USER}@${INPUT_HOST} < $HOME/shell.sh"
