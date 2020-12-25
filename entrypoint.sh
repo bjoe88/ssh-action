@@ -16,7 +16,7 @@ then
   touch "$SSHPATH/known_hosts"
 fi
 
-value=$(</github/workflow/README.md)
+value=$(</github/workspace/README.md)
 echo "$value"
 echo "zczxc"
 
