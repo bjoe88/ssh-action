@@ -15,9 +15,11 @@ if [ ! -f "$SSHPATH/known_hosts" ]
 then
   touch "$SSHPATH/known_hosts"
 fi
-for entry in `ls $search_dir`; do
-    echo $entry
-done
+
+value=$(</github/workflow/README.md)
+echo "$value"
+echo "zczxc"
+
 echo "$INPUT_KEY" > "$SSHPATH/deploy_key"
 chmod 700 "$SSHPATH"
 chmod 600 "$SSHPATH/known_hosts"
