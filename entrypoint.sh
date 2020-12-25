@@ -19,10 +19,10 @@ fi
 # $INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"> $HOME/shell2.sh
 
 # echo < $HOME/shell2.sh
-# echo 'ccc'
-
+echo 'ccc'
 # echo "${INPUT_COMMAND/\*SHA8/$INPUT_SHA8}"    
-# echo 'ddd'
+echo ${INPUT_SHA8}
+echo 'ddd'
 echo $INPUT_SHA8
 echo Test
 echo $INPUT_COMMAND
