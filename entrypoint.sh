@@ -16,8 +16,19 @@ then
   touch "$SSHPATH/known_hosts"
 fi
 
-value=$(</github/workspace/README.md)
-echo "$value"
+for entry in /github/*
+do
+  echo "$entry"
+done
+
+echo "aaaaa"
+for entry in /github/workspace/*
+do
+  echo "$entry"
+done
+
+# value=$(</github/workspace/README.md)
+# echo "$value"
 echo "zczxc"
 
 echo "$INPUT_KEY" > "$SSHPATH/deploy_key"
