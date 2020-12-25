@@ -15,26 +15,15 @@ if [ ! -f "$SSHPATH/known_hosts" ]
 then
   touch "$SSHPATH/known_hosts"
 fi
-
-# $INPUT_COMMAND | sed -e "s/*SHA8/\"${INPUT_SHA8}\"/g"> $HOME/shell2.sh
-
-# echo < $HOME/shell2.sh
-echo 'ccc'
-# echo "${INPUT_COMMAND/\*SHA8/$INPUT_SHA8}"    
-echo ${INPUT_SHA8}
-echo 'ddd'
-echo $INPUT_SHA8
-echo Test
-echo $INPUT_COMMAND
-echo Testb
+for entry in `ls $search_dir`; do
+    echo $entry
+done
 echo "$INPUT_KEY" > "$SSHPATH/deploy_key"
 chmod 700 "$SSHPATH"
 chmod 600 "$SSHPATH/known_hosts"
 chmod 600 "$SSHPATH/deploy_key"
 
 echo "${INPUT_COMMAND/\*SHA8/$INPUT_SHA8}" > $HOME/shell.sh
-cat $HOME/shell.sh
-
 echo Start Run Command
 
 if [ "$INPUT_PASS" = "" ]
