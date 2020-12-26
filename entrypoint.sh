@@ -16,7 +16,7 @@ then
   touch "$SSHPATH/known_hosts"
 fi
 
-value=$(</github/workspace/.docker-compose.deploy)
+value=$(</github/workspace/docker-compose.prod)
 echo "${value//:DOCKER_TAG/$INPUT_SHA}" > $HOME/docker_compose_${INPUT_SHA}.yml
 
 echo "$INPUT_KEY" > "$SSHPATH/deploy_key"
