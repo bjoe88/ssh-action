@@ -16,11 +16,21 @@ then
   touch "$SSHPATH/known_hosts"
 fi
 
+for entry in /github/*
+do
+  echo "$entry"
+done
+
+echo "aaaaa"
+for entry in /github/workspace/*
+do
+  echo "$entry"
+done
 
 echo "zczxc"
-value=$(</github/workspace/docker-compose.prod)
-echo "${value//:DOCKER_TAG/$INPUT_SHA8}"
-echo "zczxc"
+# value=$(</github/workspace/docker-compose.prod)
+# echo "${value//:DOCKER_TAG/$INPUT_SHA8}"
+# echo "zczxc"
 
 
 echo "$INPUT_KEY" > "$SSHPATH/deploy_key"
